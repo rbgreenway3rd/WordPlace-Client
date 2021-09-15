@@ -4,6 +4,8 @@ import { CreatedWordsProvider } from "./CreatedWords/CreatedWordsProvider";
 import { CreatedWordsList } from "./CreatedWords/CreatedWordsList";
 import { CreatedWordsForm } from "./CreatedWords/CreatedWordsForm";
 import { CreatedWordsDetail } from "./CreatedWords/CreatedWordsDetail";
+import { FavoritedWordsProvider } from "./FavoritedWords/FavoritedWordsProvider";
+import { FavoritedWordsList } from "./FavoritedWords/FavoritedWordsList";
 
 export const ApplicationViews = () => {
   return (
@@ -15,9 +17,12 @@ export const ApplicationViews = () => {
         }}
       >
         <CreatedWordsProvider>
-          <Route exact path="/createdwords">
-            <CreatedWordsList />
-          </Route>
+          <FavoritedWordsProvider>
+            <Route exact path="/myprofile">
+              <FavoritedWordsList />
+              <CreatedWordsList />
+            </Route>
+          </FavoritedWordsProvider>
         </CreatedWordsProvider>
       </main>
     </>
