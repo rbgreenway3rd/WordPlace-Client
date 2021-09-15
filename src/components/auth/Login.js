@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import "./Login.css";
+import "./Auth.css";
 import { NavBar } from "../nav/NavBar";
 import { ApplicationViews } from "../ApplicationViews";
 
@@ -49,7 +49,7 @@ export const Login = () => {
       </dialog>
       <section>
         <form className="form--login" onSubmit={handleLogin}>
-          <h1>Rare Publishing</h1>
+          <h1>WordPlace</h1>
           <h2>Please sign in</h2>
           <fieldset>
             <label htmlFor="inputUsername">User name </label>
