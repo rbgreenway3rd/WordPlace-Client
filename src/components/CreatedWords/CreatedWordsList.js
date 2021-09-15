@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { CreatedWordsContext } from "./CreatedWordsProvider";
-import CreatedWords from "./CreatedWords";
+// import CreatedWords from "./CreatedWords";
 import "./CreatedWords.css";
 import { useHistory } from "react-router-dom";
 
