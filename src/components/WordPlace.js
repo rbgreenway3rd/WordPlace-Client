@@ -10,7 +10,8 @@ export const WordPlace = () => (
   <>
     <Route
       render={() => {
-        if (localStorage.getItem("")) {
+        if (localStorage.getItem("wordplace_token")) {
+          //retrieve wordplace_token from localStorage to check if valid user has been logged in
           return (
             <>
               <NavBar />
@@ -18,6 +19,7 @@ export const WordPlace = () => (
             </>
           );
         } else {
+          //if no token is found in localStorage, redirect back to login
           return <Redirect to="/login" />;
         }
       }}

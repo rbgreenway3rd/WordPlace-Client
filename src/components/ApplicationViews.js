@@ -16,7 +16,7 @@ export const ApplicationViews = () => {
       >
         <CreatedWordsProvider>
           <Route exact path="/createdwords">
-            <CreatedWords />
+            <CreatedWordsList />
           </Route>
         </CreatedWordsProvider>
       </main>
