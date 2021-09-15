@@ -61,11 +61,11 @@ export const Register = () => {
       <form className="form--login" onSubmit={handleRegister}>
         <h1 className="h3 mb-3 font-weight-normal">Register an account</h1>
         <fieldset>
-          <label htmlFor="firstName"> First Name </label>
+          <label htmlFor="first_name"> First Name </label>
           <input
             ref={firstName}
             type="text"
-            name="firstName"
+            name="first_name"
             className="form-control"
             placeholder="First name"
             required
@@ -73,11 +73,11 @@ export const Register = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="lastName"> Last Name </label>
+          <label htmlFor="last_name"> Last Name </label>
           <input
             ref={lastName}
             type="text"
-            name="lastName"
+            name="last_name"
             className="form-control"
             placeholder="Last name"
             required
@@ -85,11 +85,11 @@ export const Register = () => {
         </fieldset>
 
         <fieldset>
-          <label htmlFor="userName"> User Name </label>
+          <label htmlFor="username"> User Name </label>
           <input
             ref={username}
             type="text"
-            name="userName"
+            name="username"
             className="form-control"
             placeholder="Choose a user name"
             required
