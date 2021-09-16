@@ -60,6 +60,12 @@ export const CreatedWordsList = () => {
               {" "}
               Example: {createdword.example}{" "}
             </div>
+            <button
+              onClick={() => history.push("/createdwords/detail")}
+              className="editCreatedWords__button"
+            >
+              Edit
+            </button>
           </div>
         ))}
       </div>
