@@ -22,6 +22,9 @@ export const ApplicationViews = () => {
               <FavoritedWordsList />
               <CreatedWordsList />
             </Route>
+            <Route exact path="/createdwords/create">
+              <CreatedWordsForm />
+            </Route>
           </FavoritedWordsProvider>
         </CreatedWordsProvider>
       </main>
