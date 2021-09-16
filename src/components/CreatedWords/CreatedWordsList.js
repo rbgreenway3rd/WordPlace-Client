@@ -23,6 +23,11 @@ export const CreatedWordsList = () => {
   //     setFiltered(createdwords)
   // }, [createdwords])
 
+  // const currentUser = localStorage.getItem(token);
+  // const userCreatedWords = createdwords.filter(
+  //   (createdword) => createdword.user.id === currentUser.id
+  // );
+
   return (
     <section style={{ marginTop: "2rem" }} className="createdwords_list">
       <button
