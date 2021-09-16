@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: left;
+  width: 100%;
 }
 
 .navbar__item {
@@ -11,4 +12,55 @@
 
 .navbar__logo {
   max-height: 6rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
+  color: rgb(0, 0, 0); /* font color of 'WordPlace' logo in navbar */
+  /* background-color: #000000; */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(0, 0, 0); /* Font color of navbar links */
+  text-align: left;
+  padding: 15px 17px;
+  text-decoration: none;
+}
+
+/* color changes when hovered over */
+li a:hover {
+  background-color: #4d4d4d;
+}
+
+li a.active {
+  background-color: #ffffff;
+}
+
+/* All items except the last one will have a border on the right side */
+li {
+  border-right: 2px solid rgb(51, 51, 51);
+  /* border-left: 2px solid rgb(51, 51, 51); */
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li:first-child {
+  border-left: none;
+}
+
+.navbar__name {
 }
