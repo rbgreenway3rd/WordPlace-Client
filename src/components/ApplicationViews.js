@@ -25,6 +25,11 @@ export const ApplicationViews = () => {
             <Route exact path="/createdwords/create">
               <CreatedWordsForm />
             </Route>
+            <Route
+              exact
+              path="/createdwords/edit/:createdWordId(\d+)"
+              render={(props) => <CreatedWordsForm {...props} />}
+            />
           </FavoritedWordsProvider>
         </CreatedWordsProvider>
       </main>

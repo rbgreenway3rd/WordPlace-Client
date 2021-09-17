@@ -5,7 +5,12 @@ import "./CreatedWords.css";
 import { useHistory } from "react-router-dom";
 
 export const CreatedWordsList = () => {
-  const { createdwords, getCreatedWords } = useContext(CreatedWordsContext);
+  const {
+    createdwords,
+    getCreatedWords,
+    updateCreatedWords,
+    deleteCreatedWords,
+  } = useContext(CreatedWordsContext);
   const history = useHistory();
   // const [filteredcreatedwords, setFiltered] = useState([])
 
@@ -13,6 +18,23 @@ export const CreatedWordsList = () => {
   useEffect(() => {
     getCreatedWords();
   }, []);
+
+  // const handleClickDeleteCreatedWords = (event) => {
+  //   event.preventDefault();
+  //   if (createdWord.word === "") {
+  //     window.alert("Please Fill Out All Fields");
+  //   } else {
+  //     let newCreatedWords = {
+  //       word: createdWord.word,
+  //       pronunciation: createdWord.pronunciation,
+  //       definition: createdWord.definition,
+  //       partOfSpeech: createdWord.partOfSpeech,
+  //       example: createdWord.example,
+  //     };
+  //     addCreatedWords(newCreatedWords);
+  //     history.push("/myprofile");
+  //   }
+  // };
 
   // useEffect(() => {
   //     const matchingcreatedwords = createdwords.filter(createdword => createdword.name.toLowerCase().includes(searchTerms.toLowerCase()))
@@ -60,11 +82,23 @@ export const CreatedWordsList = () => {
               {" "}
               Example: {createdword.example}{" "}
             </div>
+            <div className="editCreatedWords__button">
+              <button
+                className="btn btn-3"
+                onClick={() =>
+                  history.push(`/createdwords/edit/${createdword.id}`)
+                }
+                className="editCreatedWords__button"
+              >
+                Edit
+              </button>
+            </div>
+
             <button
-              onClick={() => history.push("/createdwords/detail")}
-              className="editCreatedWords__button"
+              onClick={() => deleteCreatedWords(createdword.id)}
+              className="deleteCreatedWords__button"
             >
-              Edit
+              Delete
             </button>
           </div>
         ))}
