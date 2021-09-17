@@ -47,6 +47,10 @@ export const FavoritedWordsProvider = (props) => {
   const deleteFavoritedWords = (favoritedwordsId) => {
     return fetch(`http://localhost:8000/favoritedwords/${favoritedwordsId}`, {
       method: "DELETE",
+      headers: {
+        Authorization: `Token ${localStorage.getItem("wordplace_token")}`,
+        "Content-Type": "application/json",
+      },
     }).then(getFavoritedWords);
   };
 
