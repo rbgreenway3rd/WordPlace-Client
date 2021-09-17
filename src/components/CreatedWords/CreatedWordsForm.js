@@ -41,6 +41,10 @@ export const CreatedWordsForm = () => {
     } else {
       let newCreatedWords = {
         word: createdWord.word,
+        pronunciation: createdWord.pronunciation,
+        definition: createdWord.definition,
+        partOfSpeech: createdWord.partOfSpeech,
+        example: createdWord.example,
       };
       addCreatedWords(newCreatedWords);
       history.push("/createdWords/detail/");
