@@ -6,6 +6,7 @@ import { CreatedWordsForm } from "./CreatedWords/CreatedWordsForm";
 import { CreatedWordsDetail } from "./CreatedWords/CreatedWordsDetail";
 import { FavoritedWordsProvider } from "./FavoritedWords/FavoritedWordsProvider";
 import { FavoritedWordsList } from "./FavoritedWords/FavoritedWordsList";
+import { HomePage } from "./home/HomePage";
 
 export const ApplicationViews = () => {
   return (
@@ -18,6 +19,9 @@ export const ApplicationViews = () => {
       >
         <CreatedWordsProvider>
           <FavoritedWordsProvider>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
             <Route exact path="/myprofile">
               <FavoritedWordsList />
               <CreatedWordsList />
