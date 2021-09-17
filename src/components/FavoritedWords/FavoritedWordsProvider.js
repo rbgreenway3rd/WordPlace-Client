@@ -4,6 +4,14 @@ export const FavoritedWordsContext = React.createContext();
 
 export const FavoritedWordsProvider = (props) => {
   const [favoritedwords, setFavoritedWords] = useState([]);
+  const [result, setResult] = useState([]);
+
+  // const getWordFromAPI = (word) => {
+  //   return fetch(
+  //     `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=4f56b21a-9585-4fcf-a279-f8571f143e0d`
+  //   ).then((res) => res.json())
+  //   .then((res) =>);
+  // };
 
   const getFavoritedWords = () => {
     return fetch("http://localhost:8000/favoritedwords", {
@@ -22,6 +30,7 @@ export const FavoritedWordsProvider = (props) => {
       },
     }).then((res) => res.json());
   };
+
   const addFavoritedWords = (favoritedwords) => {
     return fetch("http://localhost:8000/favoritedwords", {
       method: "POST",
@@ -58,6 +67,7 @@ export const FavoritedWordsProvider = (props) => {
     <FavoritedWordsContext.Provider
       value={{
         favoritedwords,
+        // getWordFromAPI,
         addFavoritedWords,
         getFavoritedWords,
         getFavoritedWordsById,
