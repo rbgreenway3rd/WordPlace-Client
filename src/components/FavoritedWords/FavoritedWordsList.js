@@ -5,9 +5,8 @@ import "./FavoritedWords.css";
 import { useHistory } from "react-router-dom";
 
 export const FavoritedWordsList = () => {
-  const { favoritedwords, getFavoritedWords } = useContext(
-    FavoritedWordsContext
-  );
+  const { favoritedwords, getFavoritedWords, deleteFavoritedWords } =
+    useContext(FavoritedWordsContext);
   const history = useHistory();
   // const [filteredfavoritedwords, setFiltered] = useState([])
 
@@ -52,10 +51,18 @@ export const FavoritedWordsList = () => {
               {" "}
               Part of speech: {favoritedword.partOfSpeech}{" "}
             </div>
-            <a className="favoritedword__link" href={favoritedword.link}>
-              {" "}
-              Link
-            </a>
+            <div>
+              <a className="favoritedword__link" href={favoritedword.link}>
+                {" "}
+                Link
+              </a>
+            </div>
+            <button
+              onClick={() => deleteFavoritedWords(favoritedword.id)}
+              className="deleteCreatedWords__button"
+            >
+              Delete
+            </button>
           </div>
         ))}
       </div>
