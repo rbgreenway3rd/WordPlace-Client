@@ -3,11 +3,17 @@ import { CreatedWordsContext } from "./CreatedWordsProvider";
 // import { ProfileContext } from "../profiles/ProfilesProvider";
 import "./CreatedWords.css";
 // import "./CreatedWordsForm.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
-export const CreatedWordsForm = () => {
-  const { addCreatedWords } = useContext(CreatedWordsContext);
-  //   const { getCurrentProfile } = useContext(ProfileContext);
+export const CreatedWordsForm = (props) => {
+  const history = useHistory();
+
+  const {
+    addCreatedWords,
+    updateCreatedWords,
+    getCreatedWords,
+    getCreatedWordsById,
+  } = useContext(CreatedWordsContext);
 
   const [createdWord, setCreatedWords] = useState({
     user: 0,
@@ -18,21 +24,33 @@ export const CreatedWordsForm = () => {
     example: "",
   });
 
-  const history = useHistory();
-
-  useEffect(async () => {
-    // Change to fetch/then
-    // getCurrentProfile();
-    console.log("inside useEffect");
-  }, []);
-
-  console.log("outside useEffect");
-
   const handleControlledInputChange = (event) => {
     const newCreatedWords = { ...createdWord };
     newCreatedWords[event.target.id] = event.target.value;
     setCreatedWords(newCreatedWords);
   };
+  const { createdWordId } = useParams();
+
+  useEffect(() => {
+    getCreatedWords();
+  }, []);
+
+  useEffect(() => {
+    if ("createdWordId" in props.match.params) {
+      getCreatedWordsById(props.match.params.createdWordId).then(
+        (createdWord) => {
+          setCreatedWords({
+            user: createdWord.user,
+            word: createdWord.word,
+            pronunciation: createdWord.pronunciation,
+            definition: createdWord.definition,
+            partOfSpeech: createdWord.partOfSpeech,
+            example: createdWord.example,
+          });
+        }
+      );
+    }
+  }, [props.match.params.createdWordId]);
 
   const handleClickSaveCreatedWords = (event) => {
     event.preventDefault();
@@ -47,9 +65,41 @@ export const CreatedWordsForm = () => {
         example: createdWord.example,
       };
       addCreatedWords(newCreatedWords);
-      history.push("/createdWords/detail/");
+      history.push("/myprofile");
     }
   };
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  // const handleClickSaveCreatedWords = (event) => {
+  //   if (createdWord.word === "") {
+  //     window.alert("Please Fill Out All Required Fields");
+  //   } else {
+  //     //disable the button - no extra clicks
+  //     setIsLoading(true);
+  //     if (createdWordId) {
+  //       //PUT - update
+  //       updateCreatedWords({
+  //         word: createdWord.word,
+  //         pronunciation: createdWord.pronunciation,
+  //         definition: createdWord.definition,
+  //         partOfSpeech: createdWord.partOfSpeech,
+  //         example: createdWord.example,
+  //       }).then(() => history.push(`/myprofile`));
+  //     } else {
+  //       //POST - add
+  //       let newCreatedWords = {
+  //         word: createdWord.word,
+  //         pronunciation: createdWord.pronunciation,
+  //         definition: createdWord.definition,
+  //         partOfSpeech: createdWord.partOfSpeech,
+  //         example: createdWord.example,
+  //       };
+  //       addCreatedWords(newCreatedWords);
+  //       history.push("/myprofile");
+  //     }
+  //   }
+  // };
 
   return (
     <form className="createdWordForm">
@@ -129,10 +179,31 @@ export const CreatedWordsForm = () => {
           />
         </div>
       </fieldset>
-
-      <button className="btn btn-primary" onClick={handleClickSaveCreatedWords}>
-        Save New Word
-      </button>
+      {"createdWordId" in props.match.params ? (
+        <button
+          className="btn btn-primary"
+          onClick={(e) => {
+            e.preventDefault();
+            updateCreatedWords({
+              id: props.match.params.createdWordId,
+              word: createdWord.word,
+              pronunciation: createdWord.pronunciation,
+              definition: createdWord.definition,
+              partOfSpeech: createdWord.partOfSpeech,
+              example: createdWord.example,
+            }).then(() => props.history.push("/myprofile"));
+          }}
+        >
+          Save Edits
+        </button>
+      ) : (
+        <button
+          className="btn btn-primary"
+          onClick={handleClickSaveCreatedWords}
+        >
+          Save New Word
+        </button>
+      )}
     </form>
   );
 };

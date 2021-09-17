@@ -47,6 +47,10 @@ export const CreatedWordsProvider = (props) => {
   const deleteCreatedWords = (createdwordsId) => {
     return fetch(`http://localhost:8000/createdwords/${createdwordsId}`, {
       method: "DELETE",
+      headers: {
+        Authorization: `Token ${localStorage.getItem("wordplace_token")}`,
+        "Content-Type": "application/json",
+      },
     }).then(getCreatedWords);
   };
 
