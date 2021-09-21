@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FavoritedWordsContext } from "../FavoritedWords/FavoritedWordsProvider";
 import { useHistory } from "react-router-dom";
+import "./HomePage.css";
 
 const DICTIONARYKEY = "?key=4f56b21a-9585-4fcf-a279-f8571f143e0d";
 const THESAURUSKEY = "?key=f164d778-bf48-4666-a44a-a994720e82b2";
@@ -75,7 +76,7 @@ export const HomePage = () => {
     <>
       <div className="favoritedword__background">
         <section className="favoritedword__form__page">
-          <h2>Forecasts</h2>
+          <h2>WordPlace</h2>
           <div className="favoritedword__form">
             <form
               className="favoritedword__form__submit"
