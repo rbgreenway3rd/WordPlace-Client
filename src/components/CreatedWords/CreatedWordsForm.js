@@ -29,7 +29,6 @@ export const CreatedWordsForm = (props) => {
     newCreatedWords[event.target.id] = event.target.value;
     setCreatedWords(newCreatedWords);
   };
-  const { createdWordId } = useParams();
 
   useEffect(() => {
     getCreatedWords();
@@ -166,7 +165,7 @@ export const CreatedWordsForm = (props) => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="address">Example: </label>
+          <label htmlFor="example">Example: </label>
           <input
             type="text"
             id="example"

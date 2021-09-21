@@ -29,8 +29,8 @@ export const NavBar = () => {
           to="/login"
           onClick={
             //allows the user to logout by removing the current user from the local storage
-            (event) => {
-              localStorage.removeItem("rare_token");
+            () => {
+              localStorage.removeItem("wordplace_token");
             }
           }
         >
