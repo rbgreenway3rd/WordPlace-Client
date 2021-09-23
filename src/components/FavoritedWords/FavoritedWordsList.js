@@ -15,23 +15,12 @@ export const FavoritedWordsList = () => {
     getFavoritedWords();
   }, []);
 
-  // useEffect(() => {
-  //     const matchingfavoritedwords = favoritedwords.filter(favoritedword => favoritedword.name.toLowerCase().includes(searchTerms.toLowerCase()))
-  //     setFiltered(matchingfavoritedwords)
-  // }, [searchTerms])
-
-  // useEffect(() => {
-  //     setFiltered(favoritedwords)
-  // }, [favoritedwords])
-
   return (
-    <section style={{ marginTop: "2rem" }} className="favoritedwords_list">
-      {/* <button
-        onClick={() => history.push("/favoritedwords/create")}
-        className="addFavoritedWords__button"
-      >
-        Define a New Word
-      </button> */}
+    <section
+      style={{ marginTop: "2rem" }}
+      className="favoritedwords_list fadeInDown"
+    >
+      <h2>My Favorited Words</h2>
       <div className="favoritedwords">
         {favoritedwords.map((favoritedword) => (
           <div
@@ -41,25 +30,25 @@ export const FavoritedWordsList = () => {
           >
             <div className="favoritedword__word">
               {" "}
-              Word: {favoritedword.word}
+              <u>Word:</u> {favoritedword.word}
             </div>
             <div className="favoritedword__definition">
               {" "}
-              Definition: {favoritedword.definition}
+              <u>Definition:</u> {favoritedword.definition}
             </div>
             <div className="favoritedword__partOfSpeech">
               {" "}
-              Part of speech: {favoritedword.partOfSpeech}{" "}
+              <u>Part of speech:</u> {favoritedword.partOfSpeech}{" "}
             </div>
             <div>
               <a className="favoritedword__link" href={favoritedword.link}>
                 {" "}
-                Link
+                (see json)
               </a>
             </div>
             <button
               onClick={() => deleteFavoritedWords(favoritedword.id)}
-              className="deleteCreatedWords__button"
+              className="deleteFavoritedWord__button"
             >
               Delete
             </button>

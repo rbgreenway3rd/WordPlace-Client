@@ -75,8 +75,8 @@ export const HomePage = () => {
   return (
     <>
       <div className="favoritedword__background">
-        <section className="favoritedword__form__page">
-          <h2>Look Up a Word</h2>
+        <section className="fadeInDown" id="formContent">
+          <h2 class="lookup__header">Look Up a Word</h2>
           <div className="favoritedword__form">
             <form
               className="favoritedword__form__submit"
@@ -118,29 +118,10 @@ export const HomePage = () => {
                   {/* favoritedword.definition */}
                   <p>Part of Speech: {result.fl}</p>
                   {/* favoritedword.partOfSpeech */}
-                  <a href={DICTIONARYURL + word + DICTIONARYKEY}>
+                  {/* <a href={DICTIONARYURL + word + DICTIONARYKEY}>
                     Link: {`${DICTIONARYURL} + ${word} + ${DICTIONARYKEY}`}
-                  </a>
+                  </a> */}
                 </div>
-                {/* <div className="favoritedword__result__advanced">
-                  <button
-                    className="favoritedword__form__showMoreInfo"
-                    onClick={() => showHideDiv()}
-                  >
-                    Show More Info:
-                  </button>
-                  <div
-                    className="favoritedword__result__advanced"
-                    hidden={isHidden}
-                  >
-                    <p>humidity: {result.humidity}</p>
-                    <p>visibility: {result.visibility}</p>
-                    <p>wind speed: {result.speed}</p>
-                    <p>pressure: {result.pressure}</p>
-                    <p>sunrise: </p>
-                    <p>sunset: </p>
-                  </div>
-                </div> */}
               </div>
             )}
           </div>

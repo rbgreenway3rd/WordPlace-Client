@@ -1,4 +1,7 @@
 .navbar {
+  position: sticky;
+  z-index: 100;
+  top: 0;
   display: flex;
   flex-wrap: nowrap;
   justify-content: left;
@@ -19,8 +22,8 @@ ul {
   margin: 0px;
   padding: 0px;
   overflow: auto;
-  color: rgb(0, 0, 0); /* font color of 'WordPlace' logo in navbar */
-  /* background-color: #000000; */
+  color: rgb(0, 0, 0);
+  background-color: white;
   position: fixed;
   top: 0;
   width: 100%;
