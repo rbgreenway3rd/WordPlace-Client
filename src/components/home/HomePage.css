@@ -1,0 +1,36 @@
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  border: ridge 2.5px;
+  border-color: #444444;
+  background: #cccccc;
+  padding: 30px;
+  margin-top: 25px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#formFooter {
+  background-color: #f6f6f6;
+  padding-top: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+.favoritedword__background {
+  display: flex;
+  justify-content: center;
+}
+
+.lookup__header {
+  color: black;
+}

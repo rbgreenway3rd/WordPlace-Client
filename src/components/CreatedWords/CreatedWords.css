@@ -8,6 +8,23 @@ section {
   border: solid black;
 }
 
+.createdword {
+  border-top: solid black;
+  text-align: left;
+  padding-left: 0.5em;
+}
+
+.editCreatedWords__button {
+  margin-bottom: 0;
+}
+
+.deleteCreatedWords__button {
+  margin-bottom: 1em;
+}
+
+.editButtonAndDeleteButton__container {
+  display: flex;
+}
 button {
   background-color: #000000;
   border: double white;

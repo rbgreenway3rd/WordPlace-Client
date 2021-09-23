@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import { CreatedWordsContext } from "./CreatedWordsProvider";
-// import CreatedWords from "./CreatedWords";
 import "./CreatedWords.css";
 import { useHistory } from "react-router-dom";
 
@@ -12,49 +11,18 @@ export const CreatedWordsList = () => {
     deleteCreatedWords,
   } = useContext(CreatedWordsContext);
   const history = useHistory();
-  // const [filteredcreatedwords, setFiltered] = useState([])
 
   // Initialization effect hook -> Go get createdword data
   useEffect(() => {
     getCreatedWords();
   }, []);
 
-  // const handleClickDeleteCreatedWords = (event) => {
-  //   event.preventDefault();
-  //   if (createdWord.word === "") {
-  //     window.alert("Please Fill Out All Fields");
-  //   } else {
-  //     let newCreatedWords = {
-  //       word: createdWord.word,
-  //       pronunciation: createdWord.pronunciation,
-  //       definition: createdWord.definition,
-  //       partOfSpeech: createdWord.partOfSpeech,
-  //       example: createdWord.example,
-  //     };
-  //     addCreatedWords(newCreatedWords);
-  //     history.push("/myprofile");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //     const matchingcreatedwords = createdwords.filter(createdword => createdword.name.toLowerCase().includes(searchTerms.toLowerCase()))
-  //     setFiltered(matchingcreatedwords)
-  // }, [searchTerms])
-
-  // useEffect(() => {
-  //     setFiltered(createdwords)
-  // }, [createdwords])
-
-  // const currentUser = localStorage.getItem(token);
-  // const userCreatedWords = createdwords.filter(
-  //   (createdword) => createdword.user.id === currentUser.id
-  // );
-
   return (
     <section
       style={{ marginTop: "2rem" }}
       className="createdwords_list fadeInDown"
     >
+      <h2>My Created Words</h2>
       <button
         onClick={() => history.push("/createdwords/create")}
         className="button fadeInDown"
@@ -68,41 +36,45 @@ export const CreatedWordsList = () => {
             id={`createdword--${createdword.id}`}
             key={createdword.id}
           >
-            <div className="createdword__word">Word: {createdword.word}</div>
+            <div className="createdword__word">
+              <u>Word:</u> {createdword.word}
+            </div>
             <div className="createdword__pronunciation">
               {" "}
-              Pronunciation: {createdword.pronunciation}{" "}
+              <u>Pronunciation:</u> {createdword.pronunciation}{" "}
             </div>
             <div className="createdword__definition">
               {" "}
-              Definition: {createdword.definition}
+              <u>Definition:</u> {createdword.definition}
             </div>
             <div className="createdword__partOfSpeech">
               {" "}
-              Part of speech: {createdword.partOfSpeech}{" "}
+              <u>Part of speech:</u> {createdword.partOfSpeech}{" "}
             </div>
             <div className="createdword__example">
               {" "}
-              Example: {createdword.example}{" "}
+              <u>Example:</u> {createdword.example}{" "}
             </div>
-            <div className="editCreatedWords__button">
+            <div class="editButtonAndDeleteButton__container">
+              <div className="editCreatedWords__button">
+                <button
+                  className="btn btn-3"
+                  onClick={() =>
+                    history.push(`/createdwords/edit/${createdword.id}`)
+                  }
+                  className="button editCreatedWords__button"
+                >
+                  Edit
+                </button>
+              </div>
+
               <button
-                className="btn btn-3"
-                onClick={() =>
-                  history.push(`/createdwords/edit/${createdword.id}`)
-                }
-                className="button editCreatedWords__button"
+                onClick={() => deleteCreatedWords(createdword.id)}
+                className="deleteCreatedWords__button"
               >
-                Edit
+                Delete
               </button>
             </div>
-
-            <button
-              onClick={() => deleteCreatedWords(createdword.id)}
-              className="deleteCreatedWords__button"
-            >
-              Delete
-            </button>
           </div>
         ))}
       </div>
