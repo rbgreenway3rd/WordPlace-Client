@@ -51,14 +51,17 @@ export const CreatedWordsList = () => {
   // );
 
   return (
-    <section style={{ marginTop: "2rem" }} className="createdwords_list">
+    <section
+      style={{ marginTop: "2rem" }}
+      className="createdwords_list fadeInDown"
+    >
       <button
         onClick={() => history.push("/createdwords/create")}
-        className="addCreatedWords__button"
+        className="button fadeInDown"
       >
         Define a New Word
       </button>
-      <div className="createdwords">
+      <div className="fadeInDown">
         {createdwords.map((createdword) => (
           <div
             className="createdword"
@@ -88,7 +91,7 @@ export const CreatedWordsList = () => {
                 onClick={() =>
                   history.push(`/createdwords/edit/${createdword.id}`)
                 }
-                className="editCreatedWords__button"
+                className="button editCreatedWords__button"
               >
                 Edit
               </button>

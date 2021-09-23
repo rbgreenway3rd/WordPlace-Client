@@ -7,6 +7,7 @@ import { CreatedWordsDetail } from "./CreatedWords/CreatedWordsDetail";
 import { FavoritedWordsProvider } from "./FavoritedWords/FavoritedWordsProvider";
 import { FavoritedWordsList } from "./FavoritedWords/FavoritedWordsList";
 import { HomePage } from "./home/HomePage";
+import { Styles } from "./Styles.js";
 
 export const ApplicationViews = () => {
   return (
@@ -23,8 +24,15 @@ export const ApplicationViews = () => {
               <HomePage />
             </Route>
             <Route exact path="/myprofile">
-              <FavoritedWordsList />
-              <CreatedWordsList />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                }}
+              >
+                <FavoritedWordsList />
+                <CreatedWordsList />
+              </div>
             </Route>
             <Route
               exact

@@ -76,20 +76,20 @@ export const HomePage = () => {
     <>
       <div className="favoritedword__background">
         <section className="favoritedword__form__page">
-          <h2>WordPlace</h2>
+          <h2>Look Up a Word</h2>
           <div className="favoritedword__form">
             <form
               className="favoritedword__form__submit"
               onSubmit={getWordFromAPI}
             >
               <div className="favoritedword__input__div">
-                <label className="favoritedword__word__input__label">
-                  Look up a word:{" "}
-                </label>
                 <input
                   className="favoritedword__word__input"
                   value={word}
                   onChange={(e) => setWord(e.target.value)}
+                  style={{
+                    border: "double black",
+                  }}
                 />
               </div>
               <button

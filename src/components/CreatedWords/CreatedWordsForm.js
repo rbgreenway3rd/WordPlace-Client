@@ -101,9 +101,10 @@ export const CreatedWordsForm = (props) => {
   // };
 
   return (
-    <form className="createdWordForm">
-      <h2>Define a New Word</h2>
-      <fieldset>
+    <div class="wrapper fadeInDown">
+      <form id="formContent">
+        <h2>Define a New Word</h2>
+
         <div className="form-group">
           <label htmlFor="word">New Word:</label>
           <input
@@ -117,8 +118,7 @@ export const CreatedWordsForm = (props) => {
             onChange={handleControlledInputChange}
           />
         </div>
-      </fieldset>
-      <fieldset>
+
         <div className="form-group">
           <label htmlFor="pronunciation">Pronunciation: </label>
           <input
@@ -132,8 +132,7 @@ export const CreatedWordsForm = (props) => {
             onChange={handleControlledInputChange}
           />
         </div>
-      </fieldset>
-      <fieldset>
+
         <div className="form-group">
           <label htmlFor="address">Definition: </label>
           <input
@@ -147,8 +146,7 @@ export const CreatedWordsForm = (props) => {
             onChange={handleControlledInputChange}
           />
         </div>
-      </fieldset>
-      <fieldset>
+
         <div className="form-group">
           <label htmlFor="address">Part of Speech: </label>
           <input
@@ -162,8 +160,7 @@ export const CreatedWordsForm = (props) => {
             onChange={handleControlledInputChange}
           />
         </div>
-      </fieldset>
-      <fieldset>
+
         <div className="form-group">
           <label htmlFor="example">Example: </label>
           <input
@@ -172,37 +169,38 @@ export const CreatedWordsForm = (props) => {
             required
             autoFocus
             className="form-control"
-            placeholder="Write a short example utilizing your new word here"
+            placeholder="Write a short example using your new word"
             value={createdWord.example}
             onChange={handleControlledInputChange}
           />
         </div>
-      </fieldset>
-      {"createdWordId" in props.match.params ? (
-        <button
-          className="btn btn-primary"
-          onClick={(e) => {
-            e.preventDefault();
-            updateCreatedWords({
-              id: props.match.params.createdWordId,
-              word: createdWord.word,
-              pronunciation: createdWord.pronunciation,
-              definition: createdWord.definition,
-              partOfSpeech: createdWord.partOfSpeech,
-              example: createdWord.example,
-            }).then(() => props.history.push("/myprofile"));
-          }}
-        >
-          Save Edits
-        </button>
-      ) : (
-        <button
-          className="btn btn-primary"
-          onClick={handleClickSaveCreatedWords}
-        >
-          Save New Word
-        </button>
-      )}
-    </form>
+
+        {"createdWordId" in props.match.params ? (
+          <button
+            className="btn btn-primary"
+            onClick={(e) => {
+              e.preventDefault();
+              updateCreatedWords({
+                id: props.match.params.createdWordId,
+                word: createdWord.word,
+                pronunciation: createdWord.pronunciation,
+                definition: createdWord.definition,
+                partOfSpeech: createdWord.partOfSpeech,
+                example: createdWord.example,
+              }).then(() => props.history.push("/myprofile"));
+            }}
+          >
+            Save Edits
+          </button>
+        ) : (
+          <button
+            className="btn btn-primary"
+            onClick={handleClickSaveCreatedWords}
+          >
+            Save New Word
+          </button>
+        )}
+      </form>
+    </div>
   );
 };

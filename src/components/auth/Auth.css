@@ -128,9 +128,9 @@ h3.active {
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-  background-color: #ffffff;
-  border: none;
-  color: rgb(0, 0, 0);
+  background-color: #000000;
+  border: double white;
+  color: rgb(255, 255, 255);
   padding: 15px 80px;
   text-align: center;
   text-decoration: none;
@@ -152,9 +152,9 @@ input[type="reset"] {
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
-  background-color: #000000;
-  color: rgb(255, 255, 255);
-  border: black;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: double black;
 }
 
 input[type="button"]:active,
@@ -190,6 +190,11 @@ input[type="password"] {
 }
 
 input[type="text"]:focus {
+  background-color: rgb(190, 220, 255);
+  border-bottom: 2px solid #000000;
+}
+
+input[type="password"]:focus {
   background-color: rgb(190, 220, 255);
   border-bottom: 2px solid #000000;
 }
