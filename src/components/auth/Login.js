@@ -54,9 +54,12 @@ export const Login = () => {
         {/* <!-- Icon --> */}
         <div class="fadeIn first">
           <img
-            src="http://danielzawadzki.com/codepen/01/icon.svg"
+            src="https://www.pilgrimafrica.org/wp-content/uploads/2020/12/kisspng-vector-graphics-book-stock-illustration-logo-research-vector-book-transparent-amp-png-clipart-5cce8c440022e9.3914588515570401960006.png"
             id="icon"
             alt="User Icon"
+            style={{
+              maxWidth: "10%",
+            }}
           />
         </div>
 

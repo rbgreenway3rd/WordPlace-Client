@@ -6,10 +6,7 @@ section {
 }
 .favoritedwords_list {
   border: solid black;
-}
-
-.favoritedword {
-  border-top: solid black;
+  margin-bottom: 0.5em;
 }
 
 .favoritedword__link {
@@ -17,8 +14,78 @@ section {
 }
 
 .deleteFavoritedWord__button {
-  display: flex;
+  margin-bottom: 0em;
+  margin-left: 9em;
+  margin-right: 9em;
+  padding-left: 0.5em;
 }
+
+#myFavoritedWords__header {
+  color: black;
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
+}
+
+.favoritedwords_list {
+  border: solid black;
+}
+
+.favoritedword__word {
+  border-top: solid black;
+  text-align: center;
+  padding-left: 0.5em;
+  background-color: #dddddd;
+}
+
+.favoritedword__info {
+  width: 100%;
+  border-top: double black;
+  text-align: left;
+  padding-left: 0.5em;
+}
+
+.favoritedword__pronunciation {
+  margin-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-bottom: dotted #c0c0c0;
+}
+
+.favoritedword__definition {
+  margin-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-bottom: dotted #c0c0c0;
+}
+
+.favoritedword__partOfSpeech {
+  margin-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-bottom: dotted #c0c0c0;
+}
+
+.favoritedword__example {
+  margin-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-bottom: dotted #c0c0c0;
+}
+
+.editFavoritedWords__button {
+  margin-bottom: 0;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.deleteFavoritedWords__button {
+  margin-bottom: 10em;
+  margin-left: 13em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+/* .editButtonAndDeleteButton__container {
+  display: flex;
+  margin-bottom: 0.3em;
+} */
+
 button {
   background-color: #000000;
   border: double white;
@@ -82,7 +149,15 @@ h2 {
   text-transform: uppercase;
   display: inline-block;
   margin: 40px 8px 10px 8px;
-  color: #cccccc;
+}
+
+.lookup__header {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 1em;
 }
 
 h3 {
@@ -114,6 +189,18 @@ link {
   width: 100%;
   min-height: 100%;
   padding: 20px;
+}
+
+#formHeader {
+  background-color: #f6f6f6;
+  padding-top: 1px;
+  padding-left: 25px;
+  /* padding-right: 25px; */
+  padding-bottom: 15px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 10px 10px 0px 0px;
+  margin-right: 0;
 }
 
 #formContent {
@@ -231,7 +318,7 @@ input[type="password"] {
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 6px 6px 6px px;
+  border-radius: 6px 6px 6px 6px;
 }
 
 input[type="text"]:focus {
@@ -383,4 +470,8 @@ input[type="text"]:placeholder {
 
 * {
   box-sizing: border-box;
+}
+
+.favoritedword__word__input {
+  border-radius: 6px 6px 6px 6px;
 }

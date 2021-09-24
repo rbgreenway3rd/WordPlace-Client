@@ -76,51 +76,57 @@ export const HomePage = () => {
     <>
       <div className="favoritedword__background">
         <section className="fadeInDown" id="formContent">
-          <h2 class="lookup__header">Look Up a Word</h2>
-          <div className="favoritedword__form">
-            <form
-              className="favoritedword__form__submit"
-              onSubmit={getWordFromAPI}
-            >
-              <div className="favoritedword__input__div">
-                <input
-                  className="favoritedword__word__input"
-                  value={word}
-                  onChange={(e) => setWord(e.target.value)}
-                  style={{
-                    border: "double black",
-                  }}
-                />
-              </div>
-              <button
-                className="favoritedword__form__getWordFromAPI"
-                type="submit"
+          <div id="favoritedword__form">
+            <div className="favoritedword__header" id="formHeader">
+              <h2 class="lookup__header">Look Up a Word</h2>
+              <form
+                id="formHeader"
+                className="favoritedword__form__submit"
+                onSubmit={getWordFromAPI}
               >
-                Get Definition
-              </button>
-              <button
-                className=""
-                type="button"
-                disabled={!result?.shortdef}
-                onClick={handleClickFavoriteWord}
-              >
-                Favorite
-              </button>
-            </form>
+                <div className="favoritedword__input__div">
+                  <input
+                    className="favoritedword__word__input"
+                    value={word}
+                    onChange={(e) => setWord(e.target.value)}
+                    style={{
+                      border: "double black",
+                    }}
+                  />
+                </div>
+                <button className="getDefinition__button" type="submit">
+                  Get Definition
+                </button>
+                <button
+                  className="favoriteWord__button"
+                  type="button"
+                  disabled={!result?.shortdef}
+                  onClick={handleClickFavoriteWord}
+                >
+                  Favorite
+                </button>
+              </form>
+            </div>
             {result && (
               <div className="favoritedword__results">
                 <div className="favoritedword__result__simple">
                   <p className="favoritedword__result__description">
-                    Word: {result?.meta?.id}
+                    Word: <u>{result?.meta?.id}</u>
                     {/* favoritedword.word */}
                   </p>
-                  <p>Definition: {result.shortdef}</p>
-                  {/* favoritedword.definition */}
-                  <p>Part of Speech: {result.fl}</p>
-                  {/* favoritedword.partOfSpeech */}
-                  {/* <a href={DICTIONARYURL + word + DICTIONARYKEY}>
-                    Link: {`${DICTIONARYURL} + ${word} + ${DICTIONARYKEY}`}
-                  </a> */}
+                  <div>
+                    <p className="favoritedword__shortdef">
+                      Definition: {result.shortdef}
+                    </p>
+                    {/* favoritedword.definition */}
+                    <p className="favoritedword__partOfSpeech">
+                      Part of Speech: {result.fl}
+                    </p>
+                    {/* favoritedword.partOfSpeech */}
+                    {/* <a href={DICTIONARYURL + word + DICTIONARYKEY}>
+                      Link: {`${DICTIONARYURL} + ${word} + ${DICTIONARYKEY}`}
+                    </a> */}
+                  </div>
                 </div>
               </div>
             )}

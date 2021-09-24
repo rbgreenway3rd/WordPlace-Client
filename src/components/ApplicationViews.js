@@ -26,8 +26,11 @@ export const ApplicationViews = () => {
             <Route exact path="/myprofile">
               <div
                 style={{
+                  marginLeft: "8em",
                   display: "flex",
                   flexDirection: "row",
+                  flex: "column",
+                  alignContent: "center",
                 }}
               >
                 <FavoritedWordsList />
