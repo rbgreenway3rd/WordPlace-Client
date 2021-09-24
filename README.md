@@ -1,5 +1,14 @@
 # WordPlace
 
+WordPlace is a Full-Stack web application built as a final capstone project for Nashville Software School.
+
+WordPlace has full CRUD functionality and utilizaes the following tech-stack
+  *HTML5 / CSS
+  *JavaScript
+  *React Js
+  *Python
+  *Django
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
