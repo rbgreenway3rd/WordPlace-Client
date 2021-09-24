@@ -76,9 +76,12 @@ export const Register = () => {
           {/* <!-- Icon --> */}
           <div class="fadeIn first">
             <img
-              src="http://danielzawadzki.com/codepen/01/icon.svg"
+              src="https://images.vexels.com/media/users/3/204744/isolated/preview/0de353bb35a9ff738de3d19b19e8fdf6-document-quill-stroke-icon-by-vexels.png"
               id="icon"
               alt="User Icon"
+              style={{
+                maxWidth: "10%",
+              }}
             />
           </div>
 
