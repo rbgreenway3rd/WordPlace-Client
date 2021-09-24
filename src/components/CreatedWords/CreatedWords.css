@@ -4,25 +4,108 @@ section {
   border: black;
 }
 
-.createdwords_list {
-  border: solid black;
+/* #myCreatedWords__banner {
+  background-color: white;
+} */
+
+#myCreatedWords__header {
+  color: black;
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
 }
 
-.createdword {
+.createdwords_list {
+  border: solid black;
+  margin-top: 0;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  border: ridge 2.5px;
+  border-color: #444444;
+  background: #cccccc;
+  padding: 30px;
+  margin-top: 0em;
+  width: 25em;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.createdword__word {
   border-top: solid black;
+  text-align: center;
+  padding-left: 0.5em;
+  background-color: #dddddd;
+}
+
+.createdword__info {
+  width: 100%;
+  border-top: double black;
   text-align: left;
   padding-left: 0.5em;
 }
 
+.createdword__pronunciation {
+  margin-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-bottom: dotted #c0c0c0;
+}
+
+.createdword__definition {
+  margin-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-bottom: dotted #c0c0c0;
+  font-size: 95%;
+}
+
+.createdword__partOfSpeech {
+  margin-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-bottom: dotted #c0c0c0;
+  font-size: 90%;
+}
+
+.createdword__example {
+  margin-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-bottom: dotted #c0c0c0;
+  font-size: 90%;
+}
+
+#defineANewWord__button {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  background-color: white;
+  margin-right: 4.4em;
+  border: solid black;
+  border-color: black;
+  color: black;
+}
+
+#defineANewWord__button:hover {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  border: double rgb(255, 255, 255);
+}
+
 .editCreatedWords__button {
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-align: left;
 }
 
 .deleteCreatedWords__button {
-  margin-bottom: 1em;
+  /* margin-bottom: 0em;
+  margin-left: 9em; */
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .editButtonAndDeleteButton__container {
+  margin-bottom: 0em;
   display: flex;
 }
 button {
@@ -88,7 +171,7 @@ h2 {
   text-transform: uppercase;
   display: inline-block;
   margin: 40px 8px 10px 8px;
-  color: #cccccc;
+  color: #000000;
 }
 
 h3 {
@@ -120,6 +203,18 @@ link {
   width: 100%;
   min-height: 100%;
   padding: 20px;
+}
+
+#formHeader {
+  background-color: #f6f6f6;
+  padding-top: 1px;
+  padding-left: 25px;
+  /* padding-right: 25px; */
+  padding-bottom: 1px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 30px 30px 30px 30px;
+  margin-right: 0;
 }
 
 #formContent {
@@ -191,7 +286,7 @@ input[type="reset"] {
   -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
   -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 6px 6px 6px 6px;
   margin: 5px 20px 40px 20px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -218,7 +313,27 @@ input[type="reset"]:active {
   transform: scale(0.95);
 }
 
-input[type="text"],
+input[type="text"] {
+  background-color: #cccccc;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #000000;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 6px 6px 6px 6px;
+}
+
 input[type="password"] {
   background-color: #cccccc;
   border: none;
@@ -237,7 +352,7 @@ input[type="password"] {
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 6px 6px 6px px;
+  border-radius: 6px 6px 6px 6px;
 }
 
 input[type="text"]:focus {
@@ -389,4 +504,8 @@ input[type="text"]:placeholder {
 
 * {
   box-sizing: border-box;
+}
+
+input {
+  border-radius: 6px 6px 6px 6px;
 }

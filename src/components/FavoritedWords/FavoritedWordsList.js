@@ -17,10 +17,13 @@ export const FavoritedWordsList = () => {
 
   return (
     <section
-      style={{ marginTop: "2rem" }}
+      style={{ marginBottom: "2rem", marginTop: "1.9rem" }}
       className="favoritedwords_list fadeInDown"
+      id="formContent"
     >
-      <h2>My Favorited Words</h2>
+      <section id="formHeader" className="fadeInDown">
+        <h2 id="myFavoritedWords__header">My Favorited Words</h2>
+      </section>
       <div className="favoritedwords">
         {favoritedwords.map((favoritedword) => (
           <div
@@ -30,28 +33,33 @@ export const FavoritedWordsList = () => {
           >
             <div className="favoritedword__word">
               {" "}
-              <u>Word:</u> {favoritedword.word}
+              <u>{favoritedword.word}</u>
             </div>
-            <div className="favoritedword__definition">
-              {" "}
-              <u>Definition:</u> {favoritedword.definition}
-            </div>
-            <div className="favoritedword__partOfSpeech">
-              {" "}
-              <u>Part of speech:</u> {favoritedword.partOfSpeech}{" "}
-            </div>
-            <div>
-              <a className="favoritedword__link" href={favoritedword.link}>
+            <section class="favoritedword__info">
+              <div className="favoritedword__definition">
                 {" "}
-                (see json)
-              </a>
-            </div>
-            <button
-              onClick={() => deleteFavoritedWords(favoritedword.id)}
-              className="deleteFavoritedWord__button"
-            >
-              Delete
-            </button>
+                <u>Definition:</u> {favoritedword.definition}
+              </div>
+              <div className="favoritedword__partOfSpeech">
+                {" "}
+                <u>Part of speech:</u> {favoritedword.partOfSpeech}{" "}
+              </div>
+              <div>
+                <a className="favoritedword__link" href={favoritedword.link}>
+                  {" "}
+                  see json
+                </a>
+              </div>
+              <button
+                onClick={() => deleteFavoritedWords(favoritedword.id)}
+                className="deleteFavoritedWord__button"
+                style={{
+                  marginBottom: "0.5em",
+                }}
+              >
+                Delete
+              </button>
+            </section>
           </div>
         ))}
       </div>

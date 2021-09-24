@@ -7,36 +7,35 @@ export const NavBar = () => {
   const history = useHistory();
 
   return (
-    <ul className="navbar">
-      <li className="navbar__item">
-        {/* <img className="navbar__logo" src={Logo} /> */}
-        <div className="navbar__name"> WordPlace</div>
-      </li>
-      <li className="navbar__item">
-        <Link className="navbar__link" to="/">
-          Home
-        </Link>
-      </li>
-      <li className="navbar__item">
-        <Link className="navbar__link" to="/myprofile">
-          My Profile
-        </Link>
-      </li>
+    <header class="nav__header">
+      <h1 class="logo">WordPlace</h1>
+      <ul className="main-nav">
+        <li className="navbar__item">
+          <Link className="navbar__link" to="/">
+            Home
+          </Link>
+        </li>
+        <li className="navbar__item">
+          <Link className="navbar__link" id="myProfile__link " to="/myprofile">
+            My Profile
+          </Link>
+        </li>
 
-      <li className="navbar__item">
-        <Link
-          className="navbar__link"
-          to="/login"
-          onClick={
-            //allows the user to logout by removing the current user from the local storage
-            () => {
-              localStorage.removeItem("wordplace_token");
+        <li className="navbar__item">
+          <Link
+            className="navbar__link"
+            to="/login"
+            onClick={
+              //allows the user to logout by removing the current user from the local storage
+              () => {
+                localStorage.removeItem("wordplace_token");
+              }
             }
-          }
-        >
-          Logout
-        </Link>
-      </li>
-    </ul>
+          >
+            Logout
+          </Link>
+        </li>
+      </ul>
+    </header>
   );
 };
